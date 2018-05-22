@@ -4,7 +4,7 @@
 <header class="search">
 <input id="search-bar" type="text" placeholder="Search" spellcheck="false"></input>
 <button id="search-btn" type="button">
-	Close<span></span>
+	Clear<span></span>
 </button>
 </header>
 <section id="video-list-container">
