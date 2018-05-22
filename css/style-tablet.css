@@ -1,0 +1,34 @@
+#video-list-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#video-list-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+#video-wrapper::-webkit-scrollbar {
+    width: 7px;
+}
+
+#video-list li {
+    width: 200px;
+}
+
+#video-list li:hover {
+    box-shadow: none;
+}
+
+.video-list-title {
+    height: 60px;
+    margin: 3px;
+}
+
+#video-wrapper {
+    height: 93%;
+    width: 95%;
+}
+
+.video {
+    padding: 11px 15px 20px 15px;
+}

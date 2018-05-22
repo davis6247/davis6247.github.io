@@ -1,0 +1,59 @@
+<p id='consolee'></p>
+
+<div class="box-container">
+<header class="search">
+<input id="search-bar" type="text" placeholder="Search" spellcheck="false"></input>
+<button id="search-btn" type="button">
+	Close<span></span>
+</button>
+</header>
+<section id="video-list-container">
+<ul id="video-list">
+</ul>
+    <div class="loading-indicator-wrapper">
+        <div class="loading-indicator">
+            <div class="gear g-1"></div>
+            <div class="gear g-2"></div>
+            <div class="gear g-3"></div>
+        </div>
+    </div>
+<section id="video-section-background">
+<div id="video-wrapper">
+    <div class="close-btn-wrapper">
+        <button id="close-btn">Close</button>
+    </div>
+    <div class="video">           
+        <div class="video-player-wrapper">           
+        </div>
+        <div class="video-info">
+            <h1 id="video-title">
+                <span></span>
+            </h1>
+            <div class="video-views-publication-date-wrapper">
+                <p id="video-views-count">
+                    <span></span> views</p>
+                <p id="video-publication-date">
+                    Published on
+                    <span></span>
+                </p>
+            </div>
+            <div id="video-author">
+                <img>
+                <span></span>
+            </div>
+            <div id="video-description">
+                <p>Description:</p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loading-indicator-wrapper">
+    <div class="loading-indicator">
+        <div class="gear g-1"></div>
+        <div class="gear g-2"></div>
+        <div class="gear g-3"></div>
+  </div>
+</div>
+</section>
+</div>
