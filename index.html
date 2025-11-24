@@ -1,16 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RsTube</title>
-    <link rel="icon" type="image/png"  href="./img/favicon.ico">
-    <meta charset="UTF-8">   
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/style-tablet.css" media="screen and (max-width:1024px)">
-    <link rel="stylesheet" type="text/css" href="css/style-phone.css" media="screen and (max-width:767px)">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src/bundle.js"></script>
+  <meta charset="UTF-8">
+  <title>Number Guess Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f4f8;
+    }
+    .game-container {
+      text-align: center;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+    input {
+      padding: 8px;
+      width: 80px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #resetBtn {
+      background-color: #f44336;
+    }
+    #resetBtn:hover {
+      background-color: #d32f2f;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
 </head>
 <body>
+  <div class="game-container">
+    <h2>Guess the Number Game</h2>
+    <p>Two random numbers (1–9) have been generated. They are different. Each has "up" or "down".</p>
+    <p>Enter your guess:</p>
+    
+    <input type="number" id="guess" min="1" max="9">
+    <br>
+    <button onclick="checkGuess()">Submit Guess</button>
+    <button id="resetBtn" onclick="resetGame()">Reset Game</button>
+    
+    <div id="result"></div>
+  </div>
+  
+  <script>
+    let num1, num2, assignment;
 
+    function generateNumbers() {
+      num1 = Math.floor(Math.random() * 9) + 1;
+      do {
+        num2 = Math.floor(Math.random() * 9) + 1;
+      } while (num2 === num1);
+
+      assignment = {};
+      if (Math.random() < 0.5) {
+        assignment[num1] = "up";
+        assignment[num2] = "down";
+      } else {
+        assignment[num1] = "down";
+        assignment[num2] = "up";
+      }
+    }
+
+    function checkGuess() {
+      const userGuess = parseInt(document.getElementById("guess").value);
+      const resultDiv = document.getElementById("result");
+
+      if (userGuess === num1 || userGuess === num2) {
+        resultDiv.textContent = "Correct! Number " + userGuess + " is assigned: " + assignment[userGuess];
+      } else {
+        resultDiv.textContent = "Wrong guess. Try again!";
+      }
+    }
+
+    function resetGame() {
+      generateNumbers();
+      document.getElementById("guess").value = "";
+      document.getElementById("result").textContent = "New numbers generated! Try again.";
+    }
+
+    // Initialize game on page load
+    generateNumbers();
+  </script>
 </body>
 </html>
