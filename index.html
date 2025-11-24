@@ -56,7 +56,6 @@
       font-weight: bold;
       color: #222;
     }
-	
   </style>
 </head>
 <body>
@@ -111,6 +110,13 @@
 
     // Initialize game on page load
     generateNumbers();
+
+    // Add Enter key support
+    document.getElementById("guess").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkGuess();
+      }
+    });
   </script>
 </body>
 </html>
