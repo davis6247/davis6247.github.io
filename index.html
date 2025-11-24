@@ -27,7 +27,7 @@
     }
     input {
       padding: 8px;
-      width: 80px;
+      width: 120px;
       text-align: center;
       margin-top: 10px;
     }
@@ -62,7 +62,7 @@
   <div class="game-container">
     <h2>Guess the Number Game</h2>
     <p>Two random numbers (1–9) have been generated. They are different. Each has "up" or "down".</p>
-    <p>Enter your guess (or type + to reset):</p>
+    <p>Enter your guess (or include + to reset):</p>
     
     <input type="text" id="guess">
     <br>
@@ -95,7 +95,8 @@
       const userInput = document.getElementById("guess").value.trim();
       const resultDiv = document.getElementById("result");
 
-      if (userInput === "+") {
+      // If input contains "+" anywhere, reset game
+      if (userInput.includes("+")) {
         resetGame();
         return;
       }
@@ -124,7 +125,7 @@
     document.getElementById("guess").addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
         const value = document.getElementById("guess").value.trim();
-        if (value === "+") {
+        if (value.includes("+")) {
           resetGame();
         } else {
           checkGuess();
