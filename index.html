@@ -61,7 +61,7 @@
 <body>
   <div class="game-container">
     <h2>Guess the Number Game</h2>
-    <p>Two random numbers (1–9) have been generated. They are different. Each has "up" or "down".</p>
+    <p>Two random numbers (10–29) have been generated. They are different. Each has "up" or "down".</p>
     <p>Enter your guess (or include + to reset):</p>
     
     <input type="text" id="guess">
@@ -76,18 +76,18 @@
     let num1, num2, assignment;
 
     function generateNumbers() {
-      num1 = Math.floor(Math.random() * 9) + 1;
+      num1 = Math.floor(Math.random() * 10) + 1;
       do {
-        num2 = Math.floor(Math.random() * 9) + 1;
+        num2 = Math.floor(Math.random() * 29) + 1;
       } while (num2 === num1);
 
       assignment = {};
       if (Math.random() < 0.5) {
-        assignment[num1] = "up";
-        assignment[num2] = "down";
+        assignment[num1] = "UP";
+        assignment[num2] = "DOWN";
       } else {
-        assignment[num1] = "down";
-        assignment[num2] = "up";
+        assignment[num1] = "DOWN";
+        assignment[num2] = "UP";
       }
     }
 
